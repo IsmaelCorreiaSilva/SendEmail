@@ -1,0 +1,31 @@
+﻿@model SendEmail.Models.Email
+
+@{
+    ViewData["Title"] = "Send Email";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Send Email</h1>
+</div>
+<div>
+    <div class="mb-3">
+        <label asp-for="Subject" class="form-label">Subject</label>
+        <input asp-for="Subject" class="form-control">
+        <span asp-validation-for="Subject" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="EmailAddress" class="form-label">Email Address</label>
+        <input type="email" class="form-control" asp-for="EmailAddress" placeholder="name@example.com">
+        <span asp-validation-for="EmailAddress" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Message" class="form-label">Message</label>
+        <textarea asp-for="Message" class="form-control" id="message" rows="3"></textarea>
+        <span asp-validation-for="Message" class="text-danger"></span>
+    </div>
+</div>
+<div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a asp-controller="Home" asp-action="Index" class="btn btn-primary me-md-2">Send</a>
+    </div>
+</div>
