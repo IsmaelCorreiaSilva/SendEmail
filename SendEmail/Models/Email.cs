@@ -10,5 +10,6 @@ namespace SendEmail.Models
         public string Subject { get; set; }
         [Required(ErrorMessage = "Is Required")]
         public string Message { get; set; }
+        public IFormFile File { get; set; }
     }
 }

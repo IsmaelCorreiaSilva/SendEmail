@@ -7,7 +7,7 @@
     <h1 class="display-4">Send Email</h1>
 </div>
 
-<form method="post">
+<form method="post" enctype="multipart/form-data">
     <div>
         <div class="mb-3">
             <label asp-for="Subject" class="form-label">Subject</label>
@@ -21,8 +21,12 @@
         </div>
         <div class="mb-3">
             <label asp-for="Message" class="form-label">Message</label>
-            <textarea asp-for="Message" class="form-control" id="message" rows="3"></textarea>
+            <textarea asp-for="Message" class="form-control" rows="5"></textarea>
             <span asp-validation-for="Message" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="File" class="form-label">Attachment</label>
+            <input asp-for="File" type="file" class="form-control">
         </div>
     </div>
     <div>
